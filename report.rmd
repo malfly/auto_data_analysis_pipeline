@@ -1,0 +1,29 @@
+---
+title: "Common Word Lengths"
+author: "Mallory Flynn"
+date: "'r format(Sys.Date())'"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here we have a table of word lengths:
+
+```{r}
+(data <- read.delim("histogram.tsv"))
+```
+
+The most common word length?
+
+```{r analyze-data}
+most_common <- data$Length[which.max(data$Freq)]
+```
+That would be `r most_common`.
+
+Let's show this data in a histogram! 
+![*Fig. 1* A histogram of English word lengths](histogram.png)
+
+
